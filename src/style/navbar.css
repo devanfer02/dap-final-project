@@ -1,0 +1,24 @@
+.nav-href {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navbar {
+    background-color: #A0D6D7;
+}
+
+.icon-nav {
+    width: 300px;
+}
+
+@media screen and (max-width: 1020px) {
+    .icon-nav {
+        width: 210px
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icon-nav {
+        width: 180px
+    }
+}
