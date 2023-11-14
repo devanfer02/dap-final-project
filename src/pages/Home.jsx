@@ -1,26 +1,17 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import { useEffect } from "react"
+import HomeCarousel from "../components/HomeCarousel"
 
 export default function HomePage() {
+  useEffect(() => {
+    document.title = 'Home Page'
+  }, [])
+  
   return (
     <>
-      <Navbar activeLink={'Home'}/>
+      <HomeCarousel/>
       <div>
         <h1>Hello World</h1>
       </div>
-      <div>
-        <h1>Hello World</h1>
-      </div>
-      <div>
-        <h1>Hello World</h1>
-      </div>
-      <div>
-        <h1>Hello World</h1>
-      </div>
-      <div>
-        <h1>Hello World</h1>
-      </div>
-      <Footer/>
     </>
   )
 }

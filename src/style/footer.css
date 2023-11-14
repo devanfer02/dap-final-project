@@ -1,3 +1,23 @@
 .footer-blu {
     background-color: #A0D6D7;  
 }
+
+.footer-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.footer-logo {
+    width: 300px;
+}
+
+.title-section {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        width: 250px;
+        text-align: center;
+    }   
+}

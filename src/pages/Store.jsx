@@ -1,9 +1,12 @@
-import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
 export default function StorePage() {
+  useEffect(() => {
+    document.title = 'Store'
+  }, [])
+
   return (
     <>
-      <Navbar activeLink={'Store'}/>
       <div>
         <h1>Store Page</h1>
       </div>

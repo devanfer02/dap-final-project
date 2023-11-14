@@ -1,9 +1,12 @@
-import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
 export default function PortfolioPage() {
+  useEffect(() => {
+    document.title = 'My Portfolio'
+  }, [])
+
   return (
     <>
-      <Navbar activeLink={'Portfolio'}/>
       <div>
         <h1>Hello Portfolio</h1>
       </div>

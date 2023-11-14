@@ -1,11 +1,8 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../assets/icons/logo.svg'
 import '../style/navbar.css'
 
-function Navbar({ activeLink }) {
-  const isActive = (link) => {
-    return link === activeLink ? 'active' : ''
-  }
+export default function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -19,16 +16,31 @@ function Navbar({ activeLink }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-2 mb-lg-0 ms-auto" style={{ paddingTop: '10px' }}>
             <li className="nav-item nav-item-custom">
-              <h5><Link className={`nav-link underline font-dk-24 nav-href ${isActive('Home')}`} to="/">&nbsp;Home&nbsp;</Link></h5>
+              <h5>
+                <NavLink className={`nav-link underline font-dk-24 nav-href `} to="/">
+                  &nbsp;Home&nbsp;
+                </NavLink>
+              </h5>
             </li>
             <li className="nav-item nav-item-custom">
-            <h5><Link className={`nav-link underline font-dk-24 nav-href ${isActive('Portfolio')}`} to="/portfolio">&nbsp;Portfolio&nbsp;</Link></h5>
+              <h5>
+                <NavLink className={`nav-link underline font-dk-24 nav-href `} to="/portfolio">
+                  &nbsp;Portfolio&nbsp;
+              </NavLink>
+              </h5>
             </li>
             <li className="nav-item nav-item-custom">
-            <h5><Link className={`nav-link underline font-dk-24 nav-href ${isActive('About')}`} to="/about">&nbsp;About&nbsp;</Link></h5>
+              <h5>
+                <NavLink className={`nav-link underline font-dk-24 nav-href `} to="/about">&nbsp;About&nbsp;
+                </NavLink>
+              </h5>
             </li>
             <li className="nav-item nav-item-custom">
-            <h5><Link className={`nav-link underline font-dk-24 nav-href ${isActive('Store')}`} to="/store">&nbsp;Store&nbsp;</Link></h5>
+              <h5>
+                <NavLink className={`nav-link underline font-dk-24 nav-href `} to="/store">
+                  &nbsp;Store&nbsp;
+                </NavLink>
+              </h5>
             </li>
           </ul>
         </div>
@@ -36,5 +48,3 @@ function Navbar({ activeLink }) {
     </nav>
   )
 }
-
-export default Navbar;

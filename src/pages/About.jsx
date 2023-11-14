@@ -1,9 +1,12 @@
-import Navbar from "../components/Navbar"
+import { useEffect } from "react"
 
 export default function AboutPage() {
+  useEffect(() => {
+    document.title = 'About Me'
+  }, [])
+
   return (
     <>
-      <Navbar activeLink={'About'}/>
       <div>
         <h1>Hello About</h1>
       </div>
