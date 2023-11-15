@@ -4,7 +4,12 @@
 }
 
 .navbar {
-    background-color: #A0D6D7;
+    background-color: #A0D6D7 ;
+    top: 0;
+    margin-bottom: 1000px;
+    position: absolute;
+    width: 100%;
+    z-index: 1 ;
 }
 
 .icon-nav {

@@ -1,9 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Logo from '../assets/icons/logo.svg'
-import '../style/navbar.css'
 
 export default function Navbar() {
-
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -31,7 +29,8 @@ export default function Navbar() {
             </li>
             <li className="nav-item nav-item-custom">
               <h5>
-                <NavLink className={`nav-link underline font-dk-24 nav-href `} to="/about">&nbsp;About&nbsp;
+                <NavLink className={`nav-link underline font-dk-24 nav-href `} to="/about">
+                  &nbsp;About&nbsp;
                 </NavLink>
               </h5>
             </li>
