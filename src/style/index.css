@@ -28,3 +28,9 @@ html, body {
     text-transform: uppercase;
     font-family: 'DK Lemon Yellow Sun', sans-serif;
 }
+
+@media screen and (max-width: 768px) {
+    .font-dk-96 {
+        font-size: 70px;
+    }
+}

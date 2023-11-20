@@ -1,4 +1,75 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
 .home-about-container {
     margin: 40px;
-    
+    border: 10px solid #A0D6D7;   
+    display: flex;
+}
+
+.btn-custom-hero {
+    text-decoration: none;
+    background-color: #2B3253;
+    border-color: #2B3253;
+    color: white;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin-top: 100px;
+}
+
+.img-about {
+    width: 30em;
+    padding: 50px;
+}
+
+.font-about {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #2B3253;
+    width: 80%;
+    margin-bottom: 150px;
+}
+
+.section-home {
+    margin: 60px 50px;
+}
+
+@media screen and (max-width: 810px) {
+    .img-about {
+        width: 20em;
+        padding: 40px;
+        margin-right: 10em;
+    }
+
+    .btn-custom-hero {
+        width: 60%;
+    }
+
+    .font-about {
+        width: 99%;
+        font-size: 1.1em;   
+        margin-bottom: 110px;
+    }
+
+    .section-home {
+        margin: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .img-about {
+        width: 15em;   
+    }
+
+    .font-about {
+        width: 55%;
+    }
+
+    .home-about-container {
+        flex-wrap: wrap;
+        border: 6px solid #A0D6D7;   
+        margin: 20px;
+    }
 }

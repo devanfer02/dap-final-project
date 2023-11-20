@@ -46,17 +46,17 @@ export default function Footer() {
       <div className=''>
         <ul className='nav justify-content-center mb-3'>
           <li className='nav-item footer-item'>
-            <Link to="">
+            <Link to="https://www.instagram.com/" target="_blank">
               <img className="" src={instaLogo} alt="" />
             </Link>
           </li>
           <li className="nav-item footer-item">
-            <Link>
+            <Link to="" target="_blank">
               <img className="" src={emailLogo} alt="" />
             </Link>
           </li>
           <li className="nav-item footer-item">
-            <Link>
+            <Link to="https://twitter.com/" target="_blank">
               <img className="" src={tweetLogo} alt="" />
             </Link>
           </li>

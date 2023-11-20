@@ -30,20 +30,7 @@
     margin-bottom: 50px;
 }
 
-.btn-custom-hero {
-    text-decoration: none;
-    background-color: #2B3253;
-    border-color: #2B3253;
-    color: white;
-    font-family: 'Catamaran', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    padding: 10px 20px;
-    margin-top: 100px;
-}
-
 .hero-image {
-    display: block;
     width: 100%;
     filter:opacity(60%);   
 }
@@ -64,7 +51,22 @@
     }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1086px) {
+    .carousel-text {
+        margin-top: 40px;
+        top: 50%;
+    }    
+
+    .font-desc {
+        font-size: 30px;
+    }
+
+    .font-title {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .carousel-text {
         margin-top: 40px;
         top: 25%;
@@ -85,30 +87,11 @@
     }
 
     .hero-image {        
-        object-fit: cover;
-        object-position: center center;
         height: 100%;
         width: 70em;
     }
 }
 
-@media screen and (max-width: 750px) {
-    .carousel-text {
-        margin-top: 50px;
-        top: 50%;
-    }
-
-    .btn-custom-hero {
-        padding: 5px 15px;
-    }
-
-    .hero-image {        
-        object-fit: cover;
-        object-position: center center;
-        height: 100%;
-        width: 70em;
-    }
-}
 
 @media screen and (aspect-ratio: 4/3) {
     .carousel-text {
@@ -117,13 +100,34 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px){
     .hero-image {
-        object-fit: cover;
-        object-position: center center;
         text-align: center;
         justify-content: center;    
         height: 100%;
+        width: 70em;
+    }
+
+    .btn-custom-hero {
+        padding: 5px 15px;
+    }
+
+    .carousel-text {
+        margin-top: 25px; 
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .hero-image {
+        text-align: center;
+        justify-content: center;    
+        height: 100%;
+        width: 70em;
+    }
+
+    .btn-custom-hero {
+        padding: 5px 15px;
     }
 
     .carousel-text {

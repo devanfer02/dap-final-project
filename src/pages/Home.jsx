@@ -52,17 +52,17 @@ function HomeCarousel() {
         <div className='mt-5'>
           <ul className='nav justify-content-center mb-3'>
             <li className='nav-item footer-item'>
-              <Link to="">
+              <Link to="https://www.instagram.com/" target="_blank">
                 <img className="" src={instaLogo} alt="" />
               </Link>
             </li>
             <li className="nav-item footer-item">
-              <Link>
+              <Link to="" target="_blank">
                 <img className="" src={emailLogo} alt="" />
               </Link>
             </li>
             <li className="nav-item footer-item">
-              <Link>
+              <Link to="https://twitter.com/" target="_blank">
                 <img className="" src={tweetLogo} alt="" />
               </Link>
             </li>
@@ -74,10 +74,35 @@ function HomeCarousel() {
 }
 
 function HomeAbout() {
-  return (
-    <section>
-      <section className="home-about-container">
+  const width = window.innerWidth
+  const isPhone = width <= 550
 
+  const greetDiv = () => {
+    return (
+      <div className="">
+        <img src={Greet} alt="greet" className="img-about"/>
+      </div>
+    )
+  }
+  return (
+    <section className="section-home">
+      <section className="home-about-container">
+        <div className="p-5">
+          <h1 className="font-dk-96">Welcome</h1>
+          { isPhone && 
+            greetDiv()
+          }
+          <p className="font-about">
+          This is Hamdalla Agil an illustrator based in indonesia. You can explore more of his artworks through this website and get to know more about him.
+          </p>
+          <Link to="/about" className="btn-custom-hero">
+            About Me
+          </Link>
+        </div>
+        {
+          !isPhone && 
+          greetDiv()
+        }
       </section>
     </section>
   )
@@ -92,9 +117,6 @@ export default function HomePage() {
     <>
       <HomeCarousel/>
       <HomeAbout/>
-      <div>
-        <h1>Hello World</h1>
-      </div>
     </>
   )
 }
