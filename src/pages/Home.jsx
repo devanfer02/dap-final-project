@@ -1,7 +1,6 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
-import { useState } from "react";
 import Hero1 from '../assets/images/hero1.jpg'
 import Hero2 from '../assets/images/hero2.jpg'
 import Greet from '../assets/images/greet1.jpg'
@@ -74,8 +73,8 @@ function HomeCarousel() {
 }
 
 function HomeAbout() {
-  const width = window.innerWidth
-  const isPhone = width <= 550
+  const [ currWidth, setCurrWidth ] = useState(window.innerWidth)
+  const [ isPhone, setIsPhone ] = useState(currWidth <= 550)
 
   const greetDiv = () => {
     return (
@@ -84,25 +83,58 @@ function HomeAbout() {
       </div>
     )
   }
+
+  const handleResize = () => {
+    setCurrWidth(window.innerWidth)
+    setIsPhone(currWidth <= 550)
+  }
+
+  useEffect(() => {
+    if (window.innerWidth !== currWidth) {
+      handleResize()
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  
+  if (isPhone) {
+    return (
+      <section className="section-home">
+        <section className="home-about-container">
+            <h1 className="font-dk-96 welcome-title">Welcome</h1>
+            { greetDiv() }
+            <p className="font-about">
+            This is Hamdalla Agil an illustrator based in indonesia. 
+            You can explore more of his artworks through this website and get to know more about him.
+            </p>
+            <Link to="/about" className="btn-custom-about">
+              About Me
+            </Link>
+        </section>
+      </section>
+    )
+  }
+  
+
   return (
     <section className="section-home">
       <section className="home-about-container">
-        <div className="p-5">
+        <div className="p-5 home-content">
           <h1 className="font-dk-96">Welcome</h1>
-          { isPhone && 
-            greetDiv()
-          }
           <p className="font-about">
-          This is Hamdalla Agil an illustrator based in indonesia. You can explore more of his artworks through this website and get to know more about him.
+          This is Hamdalla Agil an illustrator based in indonesia. 
+          You can explore more of his artworks through this website and get to know more about him.
           </p>
-          <Link to="/about" className="btn-custom-hero">
+          <Link to="/about" className="btn-custom-about">
             About Me
           </Link>
         </div>
-        {
-          !isPhone && 
-          greetDiv()
-        }
+        { greetDiv() }
       </section>
     </section>
   )
