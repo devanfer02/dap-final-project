@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
+import assets from '../utils/assets'
+
 import '../style/footer.css'
-import Logo from '../assets/icons/logo.svg'
-import emailLogo from '../assets/icons/social/email.svg'
-import tweetLogo from '../assets/icons/social/twitter.svg'
-import instaLogo from '../assets/icons/social/instagram.svg'
 
 export default function Footer() {
   return (
@@ -12,7 +10,7 @@ export default function Footer() {
         <div className="col mb-3">
         </div>
         <div className="col mb-3">
-          <img className="footer-logo" src={Logo} alt=""/>
+          <img className="footer-logo" src={assets.webLogo} alt=""/>
         </div>
         <div className="col mb-3">
         </div>
@@ -45,21 +43,13 @@ export default function Footer() {
       </div>
       <div className=''>
         <ul className='nav justify-content-center mb-3'>
-          <li className='nav-item footer-item'>
-            <Link to="https://www.instagram.com/" target="_blank">
-              <img className="" src={instaLogo} alt="" />
-            </Link>
-          </li>
-          <li className="nav-item footer-item">
-            <Link to="" target="_blank">
-              <img className="" src={emailLogo} alt="" />
-            </Link>
-          </li>
-          <li className="nav-item footer-item">
-            <Link to="https://twitter.com/" target="_blank">
-              <img className="" src={tweetLogo} alt="" />
-            </Link>
-          </li>
+          { assets.socials.map((social) => (
+            <li className='nav-item footer-item'>
+              <Link to={social.href} target="_blank">
+                <img className="" src={social.logo} alt="" />
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <p className="text-center text-body-secondary font-dk-12">&copy; Hamdalla Agil 2023. Privacy Policy</p>

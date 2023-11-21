@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
-import Hero1 from '../assets/images/hero1.jpg'
-import Hero2 from '../assets/images/hero2.jpg'
-import Greet from '../assets/images/greet1.jpg'
-import emailLogo from '../assets/icons/social/email.svg'
-import tweetLogo from '../assets/icons/social/twitter.svg'
-import instaLogo from '../assets/icons/social/instagram.svg'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import assets from "../utils/assets";
+import 'swiper/css'
 import '../style/carousel.css'
 import '../style/home.css'
+import SliderHero from "../components/SliderHero";
 
 function CarouselImage({ src }) {
   return (
@@ -20,22 +18,10 @@ function CarouselImage({ src }) {
 }
 
 function HomeCarousel() {
-  const [ index, setIndex ] = useState(0)
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex)
-  }
 
   return (
     <section className="hero-carousel">
-      <Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark" >
-        <Carousel.Item>
-          <CarouselImage src={Hero1}/>
-        </Carousel.Item>
-        <Carousel.Item>
-          <CarouselImage src={Hero2}/>
-        </Carousel.Item>
-      </Carousel>
+      <SliderHero/>
       <section className="carousel-text">
         <h3 className="font-title">
           Hamdalla Agil
@@ -50,21 +36,13 @@ function HomeCarousel() {
         </Link>
         <div className='mt-5'>
           <ul className='nav justify-content-center mb-3'>
-            <li className='nav-item footer-item'>
-              <Link to="https://www.instagram.com/" target="_blank">
-                <img className="" src={instaLogo} alt="" />
-              </Link>
-            </li>
-            <li className="nav-item footer-item">
-              <Link to="" target="_blank">
-                <img className="" src={emailLogo} alt="" />
-              </Link>
-            </li>
-            <li className="nav-item footer-item">
-              <Link to="https://twitter.com/" target="_blank">
-                <img className="" src={tweetLogo} alt="" />
-              </Link>
-            </li>
+            { assets.socials.map((social) => (
+              <li className='nav-item footer-item'>
+                <Link to={social.href} target="_blank">
+                  <img className="" src={social.logo} alt="" />
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -79,7 +57,7 @@ function HomeAbout() {
   const greetDiv = () => {
     return (
       <div className="">
-        <img src={Greet} alt="greet" className="img-about"/>
+        <img src={assets.greet} alt="greet" className="img-about"/>
       </div>
     )
   }

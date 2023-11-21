@@ -1,0 +1,44 @@
+.slider-img {
+    width: 100%;
+    z-index: -1;
+    filter: opacity(60%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    filter:opacity(45%)
+}
+
+.swiper-hero {
+    margin-top: 86px;
+}
+
+@media screen and (max-width: 880px) {
+    .slider-img {
+        height: 50vh;
+        width: 100%;
+        align-items: center;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .swiper-hero {
+        margin-top: 56px;
+    }    
+}
+
+@media screen and (max-width: 564px) {
+    .slider-img {
+        height: 75vh;
+        width: 100%;
+    }
+
+    .swiper-hero {
+        margin-top: 56px;
+    }    
+}

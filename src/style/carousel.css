@@ -7,6 +7,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     margin-top: 90px;
+    z-index: 2;
 }
 
 .hero-carousel {
@@ -47,7 +48,7 @@
 
 @media (aspect-ratio: 16/10) {
     .carousel-text {
-        top: 40%;
+        top: 45%;
     }
 }
 
@@ -85,11 +86,6 @@
         margin-top: 50px;
         top: 33%;
     }
-
-    .hero-image {        
-        height: 100%;
-        width: 70em;
-    }
 }
 
 
@@ -101,13 +97,6 @@
 }
 
 @media screen and (max-width: 600px){
-    .hero-image {
-        text-align: center;
-        justify-content: center;    
-        height: 100%;
-        width: 70em;
-    }
-
     .btn-custom-hero {
         padding: 5px 15px;
     }
@@ -119,20 +108,13 @@
 }
 
 @media screen and (max-width: 450px) {
-    .hero-image {
-        text-align: center;
-        justify-content: center;    
-        height: 100%;
-        width: 70em;
-    }
-
     .btn-custom-hero {
         padding: 5px 15px;
     }
 
     .carousel-text {
         margin-top: 25px; 
-        top: 40%;
+        top: 45%;
     }
 
     .font-desc {
