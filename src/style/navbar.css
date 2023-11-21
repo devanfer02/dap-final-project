@@ -3,6 +3,10 @@
     margin-right: 10px;
 }
 
+.nav-href:hover {
+    color: #3F74AB;
+}
+
 .navbar {
     background-color: #A0D6D7 ;
     top: 0;
