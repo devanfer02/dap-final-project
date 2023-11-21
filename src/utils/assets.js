@@ -4,7 +4,8 @@ import greet from '../assets/images/greet1.jpg'
 import illust1 from '../assets/images/illust1.jpg'
 import illust2 from '../assets/images/illust2.jpg'
 import illust3 from '../assets/images/illust3.jpg'
-import illust4 from '../assets/images/illust3.jpg'
+import illust4 from '../assets/images/illust4.jpg'
+import illust5 from '../assets/images/illust5.jpg'
 import emailLogo from '../assets/icons/social/email.svg'
 import tweetLogo from '../assets/icons/social/twitter.svg'
 import instaLogo from '../assets/icons/social/instagram.svg'
@@ -49,7 +50,7 @@ const assets = {
       To celebrate their potential and my love for them, I've decided to create a fan art piece.`
     },
     {
-      src: hero1,
+      src: illust5,
       title: "Fall",
       category: _artCategories[0],
       paragraf: `I miss her a lot in fall.`

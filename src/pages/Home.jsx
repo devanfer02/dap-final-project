@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
@@ -118,14 +118,74 @@ function HomeAbout() {
 }
 
 function HomeIllustrations() {
+  const [ illustration, setIllustration ] = useState(assets.illustraions[0])
+
+  const notActive = (currentIllustration, sliderIllustration) => {
+    return currentIllustration.title !== sliderIllustration.title ? 'not-active' : ''
+  }
+
   return (
-    <section>
-      
+    <section className="section-illust">
+      <section className="section-illustration container">
+        <section className="current-illustration d-flex">
+          <div className="container-current-illust">
+            <img src={illustration.src} alt={illustration.title} className="current-illustration-img" draggable="false"/>
+          </div>
+          <div className="maintaner-height"></div>
+          <div className="illustration-info">
+            <h2 className="illustration-title">{illustration.title}</h2>
+            <p className="illustration-category">{illustration.category}</p>
+            <p className="illustration-description">{illustration.paragraf}</p>
+            <Link className="btn-custom-illust" to='/portfolio'>
+              &nbsp;See More&nbsp;
+            </Link>
+          </div>
+        </section>
+        <Swiper
+          slidesPerView={4}
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={40}
+          navigation
+          loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          
+          className="swiper-illustration"
+        >
+          { assets.illustraions.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="illust-container">
+                <img 
+                  src={item.src} 
+                  alt={item.title} 
+                  draggable="false" 
+                  className={`illust-slider ${notActive(illustration, item)}`}
+                  onClick={() => setIllustration(item)}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
     </section>
   )
 }
 
 export default function HomePage() {
+  const renderSpace = (times) => {
+    return Array(times + 1).join('\u00a0')
+  }
+
+  const space = renderSpace(50)
+
+  const SectionTitle = ({ title }) => {
+    return (
+      <div className="container introduction-container">
+        <h1 className="introduction">{title}</h1>
+        <p className="underlined">{space}</p>
+      </div>
+    )
+  }
+
   useEffect(() => {
     document.title = 'Home'
   }, [])
@@ -133,7 +193,9 @@ export default function HomePage() {
   return (
     <>
       <HomeCarousel/>
+      <SectionTitle title={'Introduction'}/>
       <HomeAbout/>
+      <SectionTitle title={'Portfolio'}/>
       <HomeIllustrations/>
     </>
   )
