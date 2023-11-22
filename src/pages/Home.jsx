@@ -70,7 +70,7 @@ function HomeCarousel() {
 }
 
 function HomeAbout() {
-  const isPhone = window.innerWidth <= 550
+  const [ isPhone, setIsPhone ] = useState(window.innerWidth <= 550)
   
   const greetDiv = () => {
     return (
@@ -79,6 +79,16 @@ function HomeAbout() {
       </div>
     )
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsPhone(window.innerWidth <= 550)
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [])
   
   if (isPhone) {
     return (

@@ -96,18 +96,8 @@
     }
 }
 
-@media screen and (max-width: 600px){
-    .btn-custom-hero {
-        padding: 5px 15px;
-    }
 
-    .carousel-text {
-        margin-top: 30px; 
-        top: 30%;
-    }
-}
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 620px) {
     .btn-custom-hero {
         padding: 5px 15px;
     }
