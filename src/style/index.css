@@ -29,6 +29,28 @@ html, body {
     font-family: 'DK Lemon Yellow Sun', sans-serif;
 }
 
+/*CUSTOM SWIPER NAV*/
+.swiper-illustration .swiper-button-next, 
+.swiper-illustration .swiper-button-prev {
+    color: #000000;
+}
+  
+.swiper-illustration .swiper-button-next::after, 
+.swiper-illustration .swiper-button-prev::after {
+    color: #000000;
+}
+
+.swiper-hero .swiper-button-next, 
+.swiper-hero .swiper-button-prev {
+    color: #2B3253;
+}
+
+.swiper-hero .swiper-button-next::after, 
+.swiper-hero .swiper-button-prev::after {
+    color: #2B3253;
+}
+
+
 @media screen and (max-width: 768px) {
     .font-dk-96 {
         font-size: 70px;

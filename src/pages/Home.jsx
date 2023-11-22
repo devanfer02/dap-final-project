@@ -130,6 +130,13 @@ function HomeAbout() {
 }
 
 function HomeIllustrations() {
+  const getDisplayClass = () => {
+    const isLessThan = window.innerWidth <= 810
+
+    if (isLessThan) return 'd-none'
+    else return ''
+  }
+
   const getSlidesPerView = () => {
     const isPhone = window.innerWidth <= 550
 
@@ -137,28 +144,35 @@ function HomeIllustrations() {
     else return 4
   }
 
-  const getDisplayClass = () => {
-    const isPhone = window.innerWidth <= 550
-
-    if (isPhone) return 'd-none'
-    else return ''
-  }
-
-  const [ illustration, setIllustration ] = useState(assets.illustraions[0])
-
   const notActive = (currentIllustration, sliderIllustration) => {
     return currentIllustration.title !== sliderIllustration.title ? 'not-active' : ''
   }
+
+  const [ illustration, setIllustration ] = useState(assets.illustraions[0])
+  const [ displayClass, setDisplayClass ] = useState(getDisplayClass())
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDisplayClass(getDisplayClass())
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  },[])
 
   return (
     <section className="section-illust">
       <section className="section-illustration container">
         <section className="current-illustration d-flex">
-          <div className="container-current-illust ">
+          <div className="container-current-illust">
             <img src={illustration.src} alt={illustration.title} className="current-illustration-img" draggable="false"/>
           </div>
           <div className="maintaner-height "></div>
-          <div className={`illustration-info ${getDisplayClass()}`}>
+          <div className={`illustration-info ${displayClass}`}>
             <h2 className="illustration-title">{illustration.title}</h2>
             <p className="illustration-category">{illustration.category}</p>
             <p className="illustration-description">{illustration.paragraf}</p>
