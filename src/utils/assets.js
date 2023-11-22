@@ -1,6 +1,7 @@
 import hero1 from '../assets/images/hero1.jpg'
 import hero2 from '../assets/images/hero2.jpg'
 import greet from '../assets/images/greet1.jpg'
+import storeAd from '../assets/images/store.jpg'
 import illust1 from '../assets/images/illust1.jpg'
 import illust2 from '../assets/images/illust2.jpg'
 import illust3 from '../assets/images/illust3.jpg'
@@ -64,6 +65,15 @@ const assets = {
       This game was created for a competition in a game development organization called Raion Community, and we were awarded first place.`
     }
   ],
+  portfolios: [
+    {
+      src: 'Example',
+      title: 'Example',
+      category: _artCategories[1],
+      paragraf: `Example Paragraf`
+    }
+  ],
+  ad: storeAd,
   webLogo,
   greet,
 }

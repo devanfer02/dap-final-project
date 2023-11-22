@@ -150,6 +150,7 @@ function HomeIllustrations() {
 
   const [ illustration, setIllustration ] = useState(assets.illustraions[0])
   const [ displayClass, setDisplayClass ] = useState(getDisplayClass())
+  const [ slidesPerView, setSlidesPerView ] = useState(getSlidesPerView)
 
 
   useEffect(() => {
@@ -163,6 +164,17 @@ function HomeIllustrations() {
       window.removeEventListener('resize', handleResize)
     }
   },[])
+
+  useEffect(() => {
+    const handleSlides = () => {
+      setSlidesPerView(getSlidesPerView())
+    }
+    window.addEventListener('resize', handleSlides)
+
+    return () => {
+      window.removeEventListener('resize', handleSlides)
+    }
+  })
 
   return (
     <section className="section-illust">
@@ -182,7 +194,7 @@ function HomeIllustrations() {
           </div>
         </section>
         <Swiper
-          slidesPerView={getSlidesPerView()}
+          slidesPerView={slidesPerView}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={40}
           navigation
@@ -204,6 +216,38 @@ function HomeIllustrations() {
             </SwiperSlide>
           ))}
         </Swiper>
+      </section>
+    </section>
+  )
+}
+
+function PlsHelpImBroke() {
+  return (
+    <section className="pls-help">
+      <div className="pls-help-text">
+        <h1 className="pls-help-title">
+          Please Help Me, I have to pay my bills
+        </h1>
+        <p className="pls-help-little">
+          Buy my prints or stickers please!
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function HomeStore() {
+  return (
+    <section className="store-section container">
+      <section className="store-information">
+        <h5 className="store-info">The prints are live!</h5>
+        <p className="store-desc">check out all hamdallagil's artwork here!</p>
+        <Link to="/store" className="btn-custom-about">
+          Store
+        </Link>
+      </section>
+      <section className="store-image-ad">
+        <img src={assets.ad} alt="ad-store" className="store-image"/>
       </section>
     </section>
   )
@@ -236,6 +280,9 @@ export default function HomePage() {
       <HomeAbout/>
       <SectionTitle title={'Portfolio'}/>
       <HomeIllustrations/>
+      <PlsHelpImBroke/>
+      <SectionTitle title={'Store'}/>
+      <HomeStore/>
     </>
   )
 }
