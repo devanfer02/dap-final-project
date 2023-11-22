@@ -148,11 +148,12 @@
     max-height: 30vh;
 }
 
+/*END NGATUR SECTION HOME ILLUSTRATION*/
+
 @media screen and (max-width: 1024px) {
     .img-about {
         width: 20em;
         padding: 40px;
-        margin-right: 10em;
     }
 
     .btn-custom-about {
@@ -162,7 +163,7 @@
     .font-about {
         width: 99%;
         font-size: 1.1em;   
-        margin-bottom: 110px;
+        margin-bottom: 50px;
     }
 
     .section-home {
@@ -195,6 +196,13 @@
 }
 
 @media screen and (max-width: 564px) {
+    .introduction-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 100em;
+    }
 
     .img-about {
         width: 12em;   
@@ -212,7 +220,8 @@
 
     .btn-custom-about {
         margin-bottom: 20px;
-        margin-top: 200px;
+        font-size: 18px;
+        
     }
 
     .home-about-container {
