@@ -1,49 +1,57 @@
 import { Link } from 'react-router-dom'
-import assets from '../utils/assets'
+import { socials, others } from '../utils/assets'
 
 import '../style/footer.css'
 
 export default function Footer() {
+  const sections = {
+    portfolio: {
+      title: 'Portfolio',
+      links: [
+        'Illustration', 'Character Design', 'Comic', 'Game Art'
+      ]
+    },
+    community: {
+      title: 'Community',
+      links: [
+        'About', 'Contact', 'Faq', 'Review'
+      ]
+    },
+    store: {
+      title: 'Store',
+      links: [
+        'Print', 'Stickers'
+      ]
+    }
+  }
+
   return (
     <footer className="footer-blu pb-3">
       <div className="container pt-5">
         <div className="row mb-3">
           <div className="col text-center mb-3">
-            <img className="footer-logo" src={assets.webLogo} alt=""/>
+            <img className="footer-logo" src={others.webLogo} alt=""/>
           </div>
         </div>
         <div className="row mb-3">
-          <div className="col text-center">
-            <h5 className="font-dk-12 title-section">Portfolio</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Illustration</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Character Design</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Comic</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Game Art</a></li>
-            </ul>
-          </div>
-          <div className="col text-center">
-            <h5 className="font-dk-12 title-section">Community</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">About</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Contact</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Faq</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Review</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">About</a></li>
-            </ul>
-          </div>
-          <div className="col text-center">
-            <h5 className="font-dk-12 title-section">Store</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Print</a></li>
-              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary font-dk-12">Stickers</a></li>
-            </ul>
-          </div>
+          { Object.entries(sections).map(([key, section]) => (
+            <div className="col text-center" key={key}>
+              <h5 className="font-dk-12 title-section">{section.title}</h5>
+              <ul className="nav flex-column">
+                { section.links.map((link) => (
+                  <li className="nav-item mb-2">
+                    <Link to="" className="nav-link p-0 text-body-secondary font-dk-12">{link}
+                    </Link>
+                  </li>  
+                ))}
+              </ul>
+            </div>  
+          ))}
         </div>
         <div className="row">
           <div className="col text-center">
             <ul className="nav justify-content-center mb-3">
-              {assets.socials.map((social) => (
+              {socials.map((social) => (
                 <li className="nav-item footer-item">
                   <Link to={social.href} target="_blank">
                     <img className="" src={social.logo} alt="" />

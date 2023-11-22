@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import assets from '../utils/assets'
+import { illustraions } from '../utils/assets'
 
 export default function PortfolioPage() {
   useEffect(() => {
@@ -8,7 +8,7 @@ export default function PortfolioPage() {
 
   return (
     <>
-      {assets.illustraions.map((illustration) => (
+      {illustraions.map((illustration) => (
         <div>
           <img src={illustration.src} alt="" style={{maxWidth: '20vh'}}/>
           <img src={illustration.src} alt="" style={{maxWidth: '20vh'}}/>

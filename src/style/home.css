@@ -56,6 +56,7 @@
 
 .underlined {
     text-decoration: underline;
+    user-select: none;
 }
 
 /*END NGATUR SECTION HOME ABOUT*/
@@ -284,7 +285,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-left: 100em;
     }
 
     .img-about {

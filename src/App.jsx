@@ -1,11 +1,38 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Loading from './pages/Loading.jsx'
 import NotFoundPage from './pages/NotFound'
-import HomePage from './pages/Home'
-import AboutPage from './pages/About'
-import PortfolioPage from './pages/Portfolio'
-import StorePage from './pages/Store'
 import Navbar from "./components/Navbar.jsx"
 import Footer from "./components/Footer.jsx"
+
+const HomePage = lazy(() => import('./pages/Home'))
+const AboutPage = lazy(() => import('./pages/About'))
+const PortfolioPage = lazy(() => import('./pages/Portfolio'))
+const StorePage = lazy(() => import('./pages/Store'))
+
+const pages = [
+  {
+    path: '/',
+    render: <HomePage/>
+  },
+  {
+    path: 'about',
+    render: <AboutPage/>
+  },
+  {
+    path: 'portfolio',
+    render: <PortfolioPage/>
+  },
+  {
+    path: 'store',
+    render: <StorePage/>
+  },
+  {
+    path: '*',
+    render: <NotFoundPage/>
+  }
+]
 
 function App() {
   return (
@@ -14,11 +41,14 @@ function App() {
         <Navbar/>
         <div>
           <Routes>
-            <Route path='/' element={<HomePage/>}></Route>
-            <Route path='/about' element={<AboutPage/>}></Route>
-            <Route path='/portfolio' element={<PortfolioPage/>}></Route>
-            <Route path='/store' element={<StorePage/>}></Route>
-            <Route path='*' element={<NotFoundPage/>}></Route>
+            { pages.map((page) => (
+              <Route 
+                path={page.path}
+                element={
+                  <Suspense fallback={<Loading/>}>{page.render}</Suspense> 
+                }
+              />
+            ))}
           </Routes>
         </div>
         <Footer/>

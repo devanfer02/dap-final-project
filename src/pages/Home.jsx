@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
-import assets from "../utils/assets";
+import { heroes, socials, others, illustraions } from "../utils/assets";
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
@@ -21,7 +21,7 @@ function SliderHero() {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         className='swiper-hero'
       >
-      { assets.heroes.map((hero, index) => (
+      { heroes.map((hero, index) => (
         <SwiperSlide key={index}> 
           <div className='overlay'></div>
           <img src={hero} className="slider-img" alt="hero" draggable="false"/>
@@ -47,7 +47,7 @@ function CarouselText() {
       </Link>
       <div className='mt-5'>
         <ul className='nav justify-content-center mb-3'>
-          { assets.socials.map((social) => (
+          { socials.map((social) => (
             <li className='nav-item footer-item'>
               <Link to={social.href} target="_blank">
                 <img className="" src={social.logo} alt="" />
@@ -75,7 +75,7 @@ function HomeAbout() {
   const greetDiv = () => {
     return (
       <div className="">
-        <img src={assets.greet} alt="greet" className="img-about"/>
+        <img src={others.greet} alt="greet" className="img-about"/>
       </div>
     )
   }
@@ -93,7 +93,7 @@ function HomeAbout() {
   if (isPhone) {
     return (
       <section className="section-home">
-        <section className="home-about-container justify-content-center pb-5 container">
+        <section className="home-about-container justify-content-center pb-5">
             <div className="introduction-container container align-items-center justify-content-center">
               <h1 className="font-dk-96 welcome-title">Welcome</h1>
               { greetDiv() }
@@ -148,7 +148,7 @@ function HomeIllustrations() {
     return currentIllustration.title !== sliderIllustration.title ? 'not-active' : ''
   }
 
-  const [ illustration, setIllustration ] = useState(assets.illustraions[0])
+  const [ illustration, setIllustration ] = useState(illustraions[0])
   const [ displayClass, setDisplayClass ] = useState(getDisplayClass())
   const [ slidesPerView, setSlidesPerView ] = useState(getSlidesPerView)
 
@@ -202,7 +202,7 @@ function HomeIllustrations() {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           className="swiper-illustration"
         >
-          { assets.illustraions.map((item, index) => (
+          { illustraions.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="illust-container">
                 <img 
@@ -247,7 +247,7 @@ function HomeStore() {
         </Link>
       </section>
       <section className="store-image-ad">
-        <img src={assets.ad} alt="ad-store" className="store-image"/>
+        <img src={others.ad} alt="ad-store" className="store-image"/>
       </section>
     </section>
   )
