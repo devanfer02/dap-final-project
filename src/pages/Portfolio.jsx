@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import assets from '../utils/assets'
 
 export default function PortfolioPage() {
   useEffect(() => {
@@ -7,9 +8,14 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <div>
-        <h1>Hello Portfolio</h1>
-      </div>
+      {assets.illustraions.map((illustration) => (
+        <div>
+          <img src={illustration.src} alt="" style={{maxWidth: '20vh'}}/>
+          <img src={illustration.src} alt="" style={{maxWidth: '20vh'}}/>
+          <img src={illustration.src} alt="" style={{maxWidth: '20vh'}}/>
+          <img src={illustration.src} alt="" style={{maxWidth: '20vh'}}/>
+        </div>
+      ))}
     </>
   )
 }
