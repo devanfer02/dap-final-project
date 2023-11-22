@@ -43,3 +43,9 @@
         margin-top: 56px;
     }    
 }
+
+@media screen and (max-width: 330px) {
+    .slider-img {
+        height: 90vh;
+    }
+}

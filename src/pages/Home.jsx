@@ -83,16 +83,18 @@ function HomeAbout() {
   if (isPhone) {
     return (
       <section className="section-home">
-        <section className="home-about-container">
-            <h1 className="font-dk-96 welcome-title">Welcome</h1>
-            { greetDiv() }
-            <p className="font-about">
-            This is Hamdalla Agil an illustrator based in indonesia. 
-            You can explore more of his artworks through this website and get to know more about him.
-            </p>
-            <Link to="/about" className="btn-custom-about">
-              About Me
-            </Link>
+        <section className="home-about-container justify-content-center pb-5 container">
+            <div className="introduction-container container align-items-center justify-content-center">
+              <h1 className="font-dk-96 welcome-title">Welcome</h1>
+              { greetDiv() }
+              <p className="font-about">
+              This is Hamdalla Agil an illustrator based in indonesia. 
+              You can explore more of his artworks through this website and get to know more about him.
+              </p>
+              <Link to="/about" className="btn-custom-about col-xl-1 ">
+                About Me
+              </Link>
+            </div>
         </section>
       </section>
     )
@@ -118,6 +120,20 @@ function HomeAbout() {
 }
 
 function HomeIllustrations() {
+  const getSlidesPerView = () => {
+    const isPhone = window.innerWidth <= 550
+
+    if (isPhone) return 2
+    else return 4
+  }
+
+  const getDisplayClass = () => {
+    const isPhone = window.innerWidth <= 550
+
+    if (isPhone) return 'd-none'
+    else return ''
+  }
+
   const [ illustration, setIllustration ] = useState(assets.illustraions[0])
 
   const notActive = (currentIllustration, sliderIllustration) => {
@@ -128,11 +144,11 @@ function HomeIllustrations() {
     <section className="section-illust">
       <section className="section-illustration container">
         <section className="current-illustration d-flex">
-          <div className="container-current-illust">
+          <div className="container-current-illust ">
             <img src={illustration.src} alt={illustration.title} className="current-illustration-img" draggable="false"/>
           </div>
-          <div className="maintaner-height"></div>
-          <div className="illustration-info">
+          <div className="maintaner-height "></div>
+          <div className={`illustration-info ${getDisplayClass()}`}>
             <h2 className="illustration-title">{illustration.title}</h2>
             <p className="illustration-category">{illustration.category}</p>
             <p className="illustration-description">{illustration.paragraf}</p>
@@ -142,13 +158,12 @@ function HomeIllustrations() {
           </div>
         </section>
         <Swiper
-          slidesPerView={4}
+          slidesPerView={getSlidesPerView()}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={40}
           navigation
           loop={true}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          
           className="swiper-illustration"
         >
           { assets.illustraions.map((item, index) => (
@@ -179,8 +194,8 @@ export default function HomePage() {
 
   const SectionTitle = ({ title }) => {
     return (
-      <div className="container introduction-container">
-        <h1 className="introduction">{title}</h1>
+      <div className="container section-title-container">
+        <h1 className="section-title">{title}</h1>
         <p className="underlined">{space}</p>
       </div>
     )
