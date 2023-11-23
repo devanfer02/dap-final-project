@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { socials, others } from '../utils/assets'
+import { socials, other } from '../utils/assets/assets.socials'
 
 import '../style/footer.css'
 
@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="container pt-5">
         <div className="row mb-3">
           <div className="col text-center mb-3">
-            <img className="footer-logo" src={others.webLogo} alt=""/>
+            <img className="footer-logo" src={other.webLogo} alt=""/>
           </div>
         </div>
         <div className="row mb-3">

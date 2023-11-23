@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
-import { heroes, socials, others, illustraions } from "../utils/assets";
+import { heroes, illustrations, others } from "../utils/assets/assets.home";
+import { socials } from "../utils/assets/assets.socials";
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
@@ -24,7 +25,7 @@ function SliderHero() {
       { heroes.map((hero, index) => (
         <SwiperSlide key={index}> 
           <div className='overlay'></div>
-          <img src={hero} className="slider-img" alt="hero" draggable="false"/>
+          <img src={hero} className="slider-img" alt="hero" draggable="false" loading="lazy"/>
         </SwiperSlide>
       ))}
     </Swiper>
@@ -75,7 +76,7 @@ function HomeAbout() {
   const greetDiv = () => {
     return (
       <div className="">
-        <img src={others.greet} alt="greet" className="img-about"/>
+        <img src={others.greet} alt="greet" className="img-about" loading="lazy"/>
       </div>
     )
   }
@@ -152,9 +153,9 @@ function HomeIllustrations() {
   const [ displayClass, setDisplayClass ] = useState(getDisplayClass())
   const [ slidesPerView, setSlidesPerView ] = useState(getSlidesPerView)
 
-
   useEffect(() => {
     const handleResize = () => {
+      setSlidesPerView(getSlidesPerView())
       setDisplayClass(getDisplayClass())
     }
 
@@ -163,17 +164,6 @@ function HomeIllustrations() {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  },[])
-
-  useEffect(() => {
-    const handleSlides = () => {
-      setSlidesPerView(getSlidesPerView())
-    }
-    window.addEventListener('resize', handleSlides)
-
-    return () => {
-      window.removeEventListener('resize', handleSlides)
-    }
   })
 
   return (
@@ -181,7 +171,13 @@ function HomeIllustrations() {
       <section className="section-illustration container">
         <section className="current-illustration d-flex">
           <div className="container-current-illust">
-            <img src={illustration.src} alt={illustration.title} className="current-illustration-img" draggable="false"/>
+            <img 
+              src={illustration.src} 
+              alt={illustration.title} 
+              className="current-illustration-img" 
+              draggable="false"
+              loading="lazy"
+            />
           </div>
           <div className="maintaner-height "></div>
           <div className={`illustration-info ${displayClass}`}>
@@ -211,6 +207,7 @@ function HomeIllustrations() {
                   draggable="false" 
                   className={`illust-slider ${notActive(illustration, item)}`}
                   onClick={() => setIllustration(item)}
+                  loading="lazy"
                 />
               </div>
             </SwiperSlide>
@@ -247,7 +244,7 @@ function HomeStore() {
         </Link>
       </section>
       <section className="store-image-ad">
-        <img src={others.ad} alt="ad-store" className="store-image"/>
+        <img src={others.ad} alt="ad-store" className="store-image" loading="lazy"/>
       </section>
     </section>
   )

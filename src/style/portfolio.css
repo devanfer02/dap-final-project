@@ -1,0 +1,36 @@
+/* START NGATUR SECTION TITLE */
+.section-title-container {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+
+.portfolio-title {
+    font-family: 'DK Lemon Yellow Sun', sans-serif;
+    font-weight: 500;    
+}
+
+.ft-dk-categories {
+    font-family: 'DK Lemon Yellow Sun', sans-serif;
+    color: #000000;
+}
+
+.ft-dk-categories:hover {
+    color: #3F74AB;
+}
+
+.active-category {
+    color: #3F74AB;
+}
+/* END NGATUR SECTION TITLE */
+
+/* START NGATUR MANY IMAGES */
+.portfolio-img {
+    width: 15%;
+    display: block;
+}
+
+.blur-load {
+    width: 15%;
+    background-size: cover;
+    background-position: center;
+}

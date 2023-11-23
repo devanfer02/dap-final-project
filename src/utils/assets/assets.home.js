@@ -1,16 +1,13 @@
-import hero1 from '../assets/images/hero1.jpg'
-import hero2 from '../assets/images/hero2.jpg'
-import greet from '../assets/images/greet1.jpg'
-import storeAd from '../assets/images/store.jpg'
-import illust1 from '../assets/images/illust1.jpg'
-import illust2 from '../assets/images/illust2.jpg'
-import illust3 from '../assets/images/illust3.jpg'
-import illust4 from '../assets/images/illust4.jpg'
-import illust5 from '../assets/images/illust5.jpg'
-import emailLogo from '../assets/icons/social/email.svg'
-import tweetLogo from '../assets/icons/social/twitter.svg'
-import instaLogo from '../assets/icons/social/instagram.svg'
-import webLogo from '../assets/icons/logo.svg'
+import hero1 from '../../assets/images/hero1.jpg'
+import hero2 from '../../assets/images/hero2.jpg'
+import illust1 from '../../assets/images/illust1.jpg'
+import illust2 from '../../assets/images/illust2.jpg'
+import illust3 from '../../assets/images/illust3.jpg'
+import illust4 from '../../assets/images/illust4.jpg'
+import illust5 from '../../assets/images/illust5.jpg'
+import webLogo from '../../assets/icons/logo.svg'
+import greet from '../../assets/images/greet1.jpg'
+import storeAd from '../../assets/images/store.jpg'
 
 const _artCategories = ['Illustration', 'Fan Art', 'Game Art']
 
@@ -18,13 +15,7 @@ export const heroes = [
   hero1, hero2
 ]
 
-export const socials = [
-  {href: 'https://www.instagram.com/', logo:instaLogo },
-  {href: 'https://mail.google.com/mail/', logo:emailLogo },
-  {href: 'https://twitter.com/', logo:tweetLogo },
-]
-
-export const illustraions = [
+export const illustrations = [
   {
     src: illust1,
     title: "Starlizght",
@@ -72,4 +63,3 @@ export const others = {
   webLogo,
   greet, 
 }
-
