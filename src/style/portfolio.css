@@ -28,6 +28,10 @@
     cursor:pointer;
 }
 
+.grid-images {
+    height: 250vh;
+}
+
 @media screen and (max-width: 864px ){
     .section-title-container {
         margin-top: 10vh;

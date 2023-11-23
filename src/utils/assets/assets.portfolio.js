@@ -10,7 +10,7 @@ import porto9 from '../../assets/images/portfolio9.jpg'
 import porto10 from '../../assets/images/portfolio10.jpg'
 import { illustrations, heroes } from './assets.home'
 
-const _artCategories = ['Illustration', 'Fan Art', 'Game Art']
+const _artCategories = ['Illustration', 'Fan Art', 'Game Art', 'Character Design', 'Comic']
 
 export const portfolios = [
   {
@@ -51,7 +51,7 @@ export const portfolios = [
   },
   {
     title: '',
-    category: _artCategories[0],
+    category: _artCategories[3],
     desc: '',
     src: porto7
   },
