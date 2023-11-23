@@ -149,7 +149,7 @@ function HomeIllustrations() {
     return currentIllustration.title !== sliderIllustration.title ? 'not-active' : ''
   }
 
-  const [ illustration, setIllustration ] = useState(illustraions[0])
+  const [ illustration, setIllustration ] = useState(illustrations[0])
   const [ displayClass, setDisplayClass ] = useState(getDisplayClass())
   const [ slidesPerView, setSlidesPerView ] = useState(getSlidesPerView)
 
@@ -198,7 +198,7 @@ function HomeIllustrations() {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           className="swiper-illustration"
         >
-          { illustraions.map((item, index) => (
+          { illustrations.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="illust-container">
                 <img 
