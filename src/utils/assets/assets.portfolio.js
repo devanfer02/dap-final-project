@@ -125,7 +125,7 @@ export const portfolios = [
     title: illustrations[3].title,
     category: illustrations[3].category,
     desc: illustrations[3].paragraf,
-    src: heroes[0],
+    src: heroes[0].src,
     small: smallhero1
   },
   {

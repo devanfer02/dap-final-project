@@ -56,6 +56,32 @@
     transition: opacity 200ms ease-in-out;
 }
 
+/*NGATUR MODAL*/
+.modal-content {
+    background-color: rgba(0, 0, 0, 0); 
+    border: none; 
+}
+
+.modal-backdrop {
+    background-color: rgba(0,0,0, 1) !important;
+    opacity: 0.75 !important;
+}
+
+.modal-portfolio-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    color: #A0D6D7;
+}
+
+.modal-portfolio-category, 
+.modal-portfolio-description {
+    color: #FFFFFF;
+}
+
+.btn-white {
+    color: #FFFFFF !important;
+}
+
 @media screen and (max-width: 864px ){
     .portfolio-title-container {
         margin-top: 10vh;

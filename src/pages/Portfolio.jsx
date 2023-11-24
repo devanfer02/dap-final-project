@@ -20,7 +20,6 @@ export default function PortfolioPage() {
 
   const categories = ['All', 'Illustration', 'Character Design', 'Comic', 'Game Art']
   const [ currPortfolio, setCurrPortfolio ] = useState(portfolios[0])
-  const [ showBlur, setShowBlur ] = useState(true)
   const [ porto, setPorto ] = useState({
     row: getRow(),
     currPortos: portfolios,
@@ -122,20 +121,25 @@ export default function PortfolioPage() {
           </div>
         ))}
         <div class={`modal fade`} id="modalportfolio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Ini : { currPortfolio.title }
-                </h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" onClick={(e) => e.stopPropagation()}>
+              <div class="row">
+                <div className="d-flex justify-content-end">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="col-md-6">
+                  <img 
+                    src={currPortfolio.src} 
+                    alt={currPortfolio.title} 
+                    className="w-100 w-md-75"
+                    draggable="false"
+                  />
+                </div>
+                <div className="col-md-6 modal-portfolio-content">
+                  <h1 className="modal-portfolio-title">{currPortfolio.title}</h1>
+                  <p className="modal-portfolio-category">{currPortfolio.category}</p>
+                  <p className="modal-portfolio-description">{currPortfolio.desc}</p>
+                </div>
               </div>
             </div>
           </div>
