@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { portfolios } from '../utils/assets/assets.portfolio'
 import  '../style/portfolio.css'
 
@@ -105,19 +105,20 @@ export default function PortfolioPage() {
           <div className="col-lg-3 col-md-4 mb-4 mb-lg-0 d-flex flex-column h-100">
             { portfolio1d.map(portfolio => (
               <div 
-                className="blur-load div-portfolio-img" 
-                
+                className="blur-load div-portfolio-img mt-1 mb-1" 
+                style={{ backgroundImage: `url(${portfolio.small})` }}
                 onClick={() => handleModal(portfolio)}
                 data-bs-toggle="modal" data-bs-target="#modalportfolio"
               >
                 <img 
                   src={portfolio.src}
                   alt={portfolio.title}
-                  className="w-100 mt-1 mb-1 portfolio-img" 
+                  className="w-100 img-fluid portfolio-img" 
                   loading="lazy"
                 />
                 <h4 className="hover-title">{portfolio.title}</h4>
               </div>
+              
             ))}
           </div>
         ))}
