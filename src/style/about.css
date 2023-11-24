@@ -1,0 +1,16 @@
+.about-section {
+    background-color: #2B3253;
+    margin: 20vh 0 10vh 0;
+}
+
+.title-about {
+    font-family: 'DK Lemon Yellow Sun', sans-serif;
+    text-transform: uppercase;
+    color: #A0D6D7;
+}
+
+.desc-about {
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+}
+
