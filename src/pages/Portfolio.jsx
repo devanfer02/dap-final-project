@@ -115,6 +115,7 @@ export default function PortfolioPage() {
                   alt={portfolio.title}
                   className="w-100 img-fluid portfolio-img" 
                   loading="lazy"
+                  draggable="false"
                 />
                 <h4 className="hover-title">{portfolio.title}</h4>
               </div>

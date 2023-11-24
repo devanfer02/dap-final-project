@@ -6,19 +6,19 @@ import '../style/footer.css'
 export default function Footer() {
   const sections = {
     portfolio: {
-      title: 'Portfolio',
+      title: 'portfolio',
       links: [
         'Illustration', 'Character Design', 'Comic', 'Game Art'
       ]
     },
-    community: {
-      title: 'Community',
+    about: {
+      title: 'about',
       links: [
-        'About', 'Contact', 'Faq', 'Review'
+        'Contact', 'Faq', 'Review'
       ]
     },
     store: {
-      title: 'Store',
+      title: 'store',
       links: [
         'Print', 'Stickers'
       ]
@@ -36,11 +36,18 @@ export default function Footer() {
         <div className="row mb-3">
           { Object.entries(sections).map(([key, section]) => (
             <div className="col text-center" key={key}>
-              <h5 className="font-dk-12 title-section">{section.title}</h5>
+              <Link style={{ textDecoration: 'none', color: '#0c0c0c' }} to={`/${section.title}`}>
+                <h5 className="font-dk-12 title-section">{section.title}</h5>
+              </Link>
               <ul className="nav flex-column">
                 { section.links.map((link) => (
                   <li className="nav-item mb-2">
-                    <Link to="" className="nav-link p-0 text-body-secondary font-dk-12">{link}
+                    <Link 
+                      to="" 
+                      className="nav-link p-0 font-dk-12"
+                      style={{ color: '#0c0c0c' }}
+                    >
+                      {link}
                     </Link>
                   </li>  
                 ))}
