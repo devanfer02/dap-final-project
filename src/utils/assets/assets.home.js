@@ -8,11 +8,19 @@ import illust5 from '../../assets/images/illust5.jpg'
 import webLogo from '../../assets/icons/logo.svg'
 import greet from '../../assets/images/greet1.jpg'
 import storeAd from '../../assets/images/store.jpg'
+import smallhero1 from '../../assets/images/small/hero1-small.jpg'
 
 const _artCategories = ['Illustration', 'Fan Art', 'Game Art']
 
 export const heroes = [
-  hero1, hero2
+  {
+    src: hero1,
+    small: smallhero1
+  }, 
+  {
+    src: hero2,
+    small: smallhero1
+  }
 ]
 
 export const illustrations = [

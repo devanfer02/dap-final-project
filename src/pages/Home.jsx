@@ -13,6 +13,23 @@ import '../style/carousel.css'
 import '../style/home.css'
 
 function SliderHero() {
+  useEffect(() => {
+    const blurDivs = document.querySelectorAll('.blur-load')
+
+    blurDivs.forEach(div => {
+      const img = div.querySelector('img')
+
+      function loaded() {
+        div.classList.add('loaded')
+      }
+
+      if (img.complete) {
+        loaded()
+      } else {
+        img.addEventListener('load', loaded)
+      }
+    })
+  })
   return (
     <Swiper
         slidesPerView={1}
@@ -25,7 +42,7 @@ function SliderHero() {
       { heroes.map((hero, index) => (
         <SwiperSlide key={index}> 
           <div className='overlay'></div>
-          <img src={hero} className="slider-img" alt="hero" draggable="false" loading="lazy"/>
+          <img src={hero.src} className="slider-img" alt="hero" draggable="false" loading="lazy"/>
         </SwiperSlide>
       ))}
     </Swiper>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { portfolios } from '../utils/assets/assets.portfolio'
 import  '../style/portfolio.css'
 
@@ -19,13 +19,18 @@ export default function PortfolioPage() {
   }
 
   const categories = ['All', 'Illustration', 'Character Design', 'Comic', 'Game Art']
-
+  const [ currPortfolio, setCurrPortfolio ] = useState(portfolios[0])
+  const [ showBlur, setShowBlur ] = useState(true)
   const [ porto, setPorto ] = useState({
     row: getRow(),
     currPortos: portfolios,
     array2d: get2DPortfolios(getRow(), portfolios),
     currCategory: categories[0]
   })
+
+  const handleModal = (portfolio) => {
+    setCurrPortfolio(portfolio)
+  }
 
   const getActiveClass = (paramCategory) => {
     return porto.currCategory === paramCategory ? 'active-category' : ''
@@ -54,6 +59,21 @@ export default function PortfolioPage() {
 
   useEffect(() => {
     document.title = 'My Portfolio'
+    const blurDivs = document.querySelectorAll('.blur-load')
+
+    blurDivs.forEach(div => {
+      const img = div.querySelector('img')
+
+      function loaded() {
+        div.classList.add('loaded')
+      }
+
+      if (img.complete) {
+        loaded()
+      } else {
+        img.addEventListener('load', loaded)
+      }
+    })
   })
 
   useEffect(() => {
@@ -85,27 +105,56 @@ export default function PortfolioPage() {
         { porto.array2d.map(portfolio1d => (
           <div className="col-lg-3 col-md-4 mb-4 mb-lg-0 d-flex flex-column h-100">
             { portfolio1d.map(portfolio => (
-              <div>
-                <img src={portfolio.src} alt="" className="w-100 mt-1 mb-1 portfolio-img" loading="lazy"/>
+              <div 
+                className="blur-load" 
+                style={{ backgroundImage: `url(${portfolio.small})` }}
+                onClick={() => handleModal(portfolio)}
+                data-bs-toggle="modal" data-bs-target="#modalportfolio"
+              >
+                <img 
+                  src={portfolio.src}
+                  alt={portfolio.title}
+                  className="w-100 mt-1 mb-1 portfolio-img" 
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
         ))}
+        <div class={`modal fade`} id="modalportfolio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Ini : { currPortfolio.title }
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
 
   return (
     <>
-      <section className="section-title-container text-center">
-        <section className="row justify-content-center">
+      <section className="portfolio-title-container text-center">
+        <section className="justify-content-center">
           <div className="col-md-12">
             <h1 className="portfolio-title">Portfolio</h1>
           </div>
         </section>
-        <section className="row justify-content-center">
+        <section className="justify-content-center">
           <div className="col-md-12">
-            <ul className="nav justify-content-center w-90">
+            <ul className="nav justify-content-center">
               { categories.map((category) => (
                 <li className="nav-item">
                   <p 
