@@ -105,8 +105,8 @@ export default function PortfolioPage() {
           <div className="col-lg-3 col-md-4 mb-4 mb-lg-0 d-flex flex-column h-100">
             { portfolio1d.map(portfolio => (
               <div 
-                className="blur-load" 
-                style={{ backgroundImage: `url(${portfolio.small})` }}
+                className="blur-load div-portfolio-img" 
+                
                 onClick={() => handleModal(portfolio)}
                 data-bs-toggle="modal" data-bs-target="#modalportfolio"
               >
@@ -116,6 +116,7 @@ export default function PortfolioPage() {
                   className="w-100 mt-1 mb-1 portfolio-img" 
                   loading="lazy"
                 />
+                <h4 className="hover-title">{portfolio.title}</h4>
               </div>
             ))}
           </div>
