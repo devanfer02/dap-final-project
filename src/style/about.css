@@ -38,6 +38,12 @@ li {
 
 .form-control {
     border-color: #000000;
+    resize: none;
+}
+
+.form-control:focus {
+    border-color: #2B3253;
+    box-shadow: 0 0 0 0.2rem rgba(43, 50, 83, 0.25);
 }
 
 .line-blue {

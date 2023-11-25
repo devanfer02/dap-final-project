@@ -1,5 +1,5 @@
 .store-hero {
-    margin: 20vh 0 10vh 0;
+    margin: 8em 0 3em 0;
     position: relative;
 }
 
@@ -13,12 +13,25 @@
     filter:opacity(30%)
 }
 
+.image-store {
+    margin: 0 40px 0 40px;
+}
+
 .store-dk {
-    font-family: 'DK Lemon Yellow Sun', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .store-category {
     font-family: 'Poppins', sans-serif;
+    font-style: italic;
 }
 
 .store-img {
@@ -32,8 +45,18 @@
     user-select: none;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 864px) {
+    .store-img {
+        height: 30vh;
+    }    
+
     .store-hero {
-        margin: 16vh 0 8vh 0;
+        margin-top: 5em;
     }
+}
+
+@media screen and (max-width: 550px) {
+    .store-img {
+        height: 50vh;
+    }    
 }
