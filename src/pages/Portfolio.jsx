@@ -153,7 +153,7 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <section className="portfolio-title-container text-center">
+      <section className="portfolio-title-container text-center mb-5">
         <section className="justify-content-center">
           <div className="col-md-12">
             <h1 className="portfolio-title">Portfolio</h1>

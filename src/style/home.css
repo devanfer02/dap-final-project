@@ -1,6 +1,5 @@
 /*START NGATUR SECTION HOME ABOUT*/
 .home-about-container {
-    margin: 40px;
     border: 10px solid #A0D6D7;   
     display: flex;
 }
@@ -24,7 +23,7 @@
 
 .img-about {
     width: 30em;
-    padding: 50px;
+    padding: 30px;
 }
 
 .font-about {
@@ -38,23 +37,6 @@
 
 .section-home {
     margin: 60px 50px;
-}
-
-.section-title-container {
-    margin-top: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.section-title {
-    text-transform: uppercase;
-    font-family: 'DK Lemon Yellow Sun', sans-serif;
-}
-
-.underlined {
-    text-decoration: underline;
-    user-select: none;
 }
 
 /*END NGATUR SECTION HOME ABOUT*/

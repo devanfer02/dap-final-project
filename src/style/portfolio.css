@@ -30,6 +30,7 @@
 
 .hover-title {
     font-family: 'Poppins', sans-serif;
+    user-select: none;
     color: #FFFFFF;
     top: 50%;
     left: 50%;
@@ -50,10 +51,6 @@
         filter: brightness(50%);
         transition: filter 0.2s ease; 
     }
-}
-
-.grid-images {
-    height: 250vh;
 }
 
 .blur-load::before {
@@ -97,7 +94,12 @@
 
 .modal-portfolio-category, 
 .modal-portfolio-description {
+    font-family: 'Poppins', sans-serif;
     color: #FFFFFF;
+}
+
+.modal-portfolio-category {
+    font-style: italic;
 }
 
 .btn-white {

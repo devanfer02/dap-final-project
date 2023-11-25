@@ -14,3 +14,46 @@
     color: #FFFFFF;
 }
 
+.faq-icon {
+    max-height: 80px;
+}
+
+.custom-underline {
+    border-bottom: 2px solid #000;
+    display: inline-block;
+}
+
+li {
+    list-style-position: inside;
+    font-family: 'Poppins', sans-serif;
+    color: #2B3253;
+}
+
+.faq-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'DK Lemon Yellow Sun', sans-serif;
+    color: #2B3253;
+}
+
+.form-control {
+    border-color: #000000;
+}
+
+.line-blue {
+    background: #2B3253;
+    height: 3px;
+}
+
+.btn-custom {
+    background-color: #2B3253;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-custom:hover {
+    color: #2B3253;
+    background-color: white;
+}

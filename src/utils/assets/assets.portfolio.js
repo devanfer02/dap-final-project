@@ -8,6 +8,10 @@ import porto7 from '../../assets/images/portfolio7.jpg'
 import porto8 from '../../assets/images/portfolio8.jpg'
 import porto9 from '../../assets/images/portfolio9.jpg'
 import porto10 from '../../assets/images/portfolio10.jpg'
+import comic1 from '../../assets/images/comic0.jpg'
+import comic2 from '../../assets/images/comic1.jpg'
+import comic3 from '../../assets/images/comic2.jpg'
+import comic4 from '../../assets/images/comic3.jpg'
 import { illustrations, heroes } from './assets.home'
 
 // BRRRR OPTIMIZATION GOESS BRRRR
@@ -26,6 +30,10 @@ import smallillust2 from '../../assets/images/small/illust2-small.jpg'
 import smallillust3 from '../../assets/images/small/illust3-small.jpg'
 import smallillust4 from '../../assets/images/small/illust4-small.jpg'
 import smallhero1 from '../../assets/images/small/hero1-small.jpg'
+import smallcomic0 from '../../assets/images/small/comic0-small.jpg'
+import smallcomic1 from '../../assets/images/small/comic1-small.jpg'
+import smallcomic2 from '../../assets/images/small/comic2-small.jpg'
+import smallcomic3 from '../../assets/images/small/comic3-small.jpg'
 
 const _artCategories = ['Illustration', 'Fan Art', 'Game Art', 'Character Design', 'Comic']
 
@@ -135,4 +143,36 @@ export const portfolios = [
     src: illustrations[4].src,
     small: smallillust4
   },
+  {
+    title: 'Comic 1 - Page 1',
+    category: _artCategories[4],
+    desc: '',
+    src: comic1,
+    small: smallcomic0
+  },
+  {
+    title: 'Comic 1 - Page 2',
+    category: _artCategories[4],
+    desc: '',
+    src: comic2,
+    small: smallcomic1
+  }, 
+  {
+    title: 'Comic 1 - Page 3',
+    category: _artCategories[4],
+    desc: '',
+    src: comic3,
+    small: smallcomic2
+  },
+  {
+    title: 'Comic 1 - Page 4',
+    category: _artCategories[4],
+    desc: '',
+    src: comic4,
+    small: smallcomic3
+  }
+]
+
+export const comics = [
+
 ]

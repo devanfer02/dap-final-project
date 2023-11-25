@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
 import { heroes, illustrations, others } from "../utils/assets/assets.home";
 import { socials } from "../utils/assets/assets.socials";
+import SectionTitle from "../components/SectionTitle";
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
@@ -106,7 +107,7 @@ function HomeAbout() {
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  }, [])
+  }, [isPhone])
   
   if (isPhone) {
     return (
@@ -130,18 +131,22 @@ function HomeAbout() {
   
   return (
     <section className="section-home">
-      <section className="home-about-container">
-        <div className="p-5 home-content">
-          <h1 className="font-dk-96">Welcome</h1>
-          <p className="font-about">
-          This is Hamdalla Agil an illustrator based in indonesia. 
-          You can explore more of his artworks through this website and get to know more about him.
-          </p>
-          <Link to="/about" className="btn-custom-about">
-            About Me
-          </Link>
+      <section className="home-about-container container">
+        <div className="row">
+          <div className="col-md-6 p-5 ">
+            <h1 className="font-dk-96">Welcome</h1>
+            <p className="font-about">
+            This is Hamdalla Agil an illustrator based in indonesia. 
+            You can explore more of his artworks through this website and get to know more about him.
+            </p>
+            <Link to="/about" className="btn-custom-about">
+              About Me
+            </Link>
+          </div>
+          <div className="col-md-6">
+            { greetDiv() }
+          </div>
         </div>
-        { greetDiv() }
       </section>
     </section>
   )
@@ -268,21 +273,6 @@ function HomeStore() {
 }
 
 export default function HomePage() {
-  const renderSpace = (times) => {
-    return Array(times + 1).join('\u00a0')
-  }
-
-  const space = renderSpace(50)
-
-  const SectionTitle = ({ title }) => {
-    return (
-      <div className="container section-title-container">
-        <h1 className="section-title">{title}</h1>
-        <p className="underlined">{space}</p>
-      </div>
-    )
-  }
-
   useEffect(() => {
     document.title = 'Home'
   }, [])
