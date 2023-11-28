@@ -260,7 +260,7 @@ function PlsHelpImBroke() {
 
 function HomeStore() {
   return (
-    <section className="container row mx-auto">
+    <section className="container row mx-auto mb-5">
       <section className="col-sm store-information">
         <h5 className="store-info ">The prints are live!</h5>
         <p className="store-desc">check out all hamdallagil's artwork here!</p>
