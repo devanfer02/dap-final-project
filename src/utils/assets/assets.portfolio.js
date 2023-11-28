@@ -39,72 +39,72 @@ const _artCategories = ['Illustration', 'Fan Art', 'Game Art', 'Character Design
 
 export const portfolios = [
   {
-    title: 'COBA DONG',
-    category: _artCategories[0],
-    desc: '',
+    title: 'Megumi Fushiguro',
+    category: _artCategories[1],
+    desc: 'A fan art from jujutsu kaisen in my style',
     src: porto1,
     small: smallporto1
   },
   {
-    title: '',
-    category: _artCategories[0],
-    desc: '',
+    title: 'Nobara Kugisaki',
+    category: _artCategories[1],
+    desc: 'A fan art from jujutsu kaisen in my style',
     src: porto2,
     small: smallporto2
   },
   {
-    title: '',
-    category: _artCategories[0],
-    desc: '',
+    title: 'Sagiri Yamada',
+    category: _artCategories[1],
+    desc: "A fan art from hell's paradise in my style",
     src: porto3,
     small: smallporto3
   },
   {
-    title: '',
+    title: 'Skater Boy',
     category: _artCategories[0],
-    desc: '',
+    desc: 'This is kind of my self potrait',
     src: porto4,
     small: smallporto4
   },
   {
-    title: '',
+    title: 'Chill',
     category: _artCategories[0],
-    desc: '',
+    desc: 'This illustration of my own original character and have a similiar looks of myself',
     src: porto5,
     small: smallporto5
   },
   {
-    title: '',
+    title: 'Starlizght Constellation',
     category: _artCategories[0],
-    desc: '',
+    desc: 'I made this illustration for my favorite person in my life. This piece have a place in my heart so does she.',
     src: porto6,
     small: smallporto6
   },
   {
-    title: '',
+    title: "Ophi's Sheet",
     category: _artCategories[3],
-    desc: '',
+    desc: "I made this character for my own personal work, FEAR. He's stubborn, silly, charming at the same time and he;s the main character in the series. I made him look so pale beacuse he's actually a serpent boy. I give him a white skin body with cool green blue hair's color and a jacket too",
     src: porto7,
     small: smallporto7
   },
   {
-    title: '',
+    title: 'Night Strike',
     category: _artCategories[0],
-    desc: '',
+    desc: "Illustration for my personal work developing my own original character, Ophi. He has a power to manipilate same kinda toxic element into anything he wants",
     src: porto8,
     small: smallporto8
   },
   {
-    title: '',
-    category: _artCategories[0],
-    desc: '',
+    title: 'Yuji Itadori',
+    category: _artCategories[1],
+    desc: 'A fan art from jujutsu kaisen in my style',
     src: porto9,
     small: smallporto9
   },
   {
-    title: '',
+    title: 'Vibe',
     category: _artCategories[0],
-    desc: '',
+    desc: "Illustration for my personal work and study. I want it ot capture the vibe in the sunny mood day with music playing in the head. Fun fact, bad - wave to earth inspired this piece.",
     src: porto10,
     small: smallporto10
   },

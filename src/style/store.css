@@ -21,7 +21,6 @@
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     color: white;
-    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -32,6 +31,11 @@
 .store-category {
     font-family: 'Poppins', sans-serif;
     font-style: italic;
+    font-weight: bolder;
+}
+
+.product-title {
+    font-family: 'DK Lemon Yellow Sun', sans-serif;
 }
 
 .store-img {
@@ -56,6 +60,9 @@
 }
 
 @media screen and (max-width: 550px) {
+    .store-dk {
+        text-align: center;
+    }
     .store-img {
         height: 50vh;
     }    

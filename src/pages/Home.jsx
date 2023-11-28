@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 import { heroes, illustrations, others } from "../utils/assets/assets.home";
 import { socials } from "../utils/assets/assets.socials";
 import SectionTitle from "../components/SectionTitle";
@@ -34,10 +34,10 @@ function SliderHero() {
   return (
     <Swiper
         slidesPerView={1}
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         navigation
         loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         className='swiper-hero'
       >
       { heroes.map((hero, index) => (
@@ -168,7 +168,7 @@ function HomeIllustrations() {
   }
 
   const notActive = (currentIllustration, sliderIllustration) => {
-    return currentIllustration.title !== sliderIllustration.title ? 'not-active' : ''
+    return currentIllustration.title !== sliderIllustration.title ? 'not-active' : 'active-illust'
   }
 
   const [ illustration, setIllustration ] = useState(illustrations[0])
@@ -243,13 +243,16 @@ function HomeIllustrations() {
 function PlsHelpImBroke() {
   return (
     <section className="pls-help">
-      <div className="pls-help-text">
-        <h1 className="pls-help-title">
-          Please Help Me, I have to pay my bills
-        </h1>
-        <p className="pls-help-little">
-          Buy my prints or stickers please!
-        </p>
+      <div className="position-relative">
+        <img src={others.imbroke} alt="" className="w-100"/>
+        <div className="pls-help-text">
+          <h1 className="pls-help-title">
+            Please Help Me, I have to pay my bills
+          </h1>
+          <p className="pls-help-little">
+            Buy my prints or stickers please!
+          </p>
+        </div>
       </div>
     </section>
   )
@@ -257,16 +260,18 @@ function PlsHelpImBroke() {
 
 function HomeStore() {
   return (
-    <section className="store-section container">
-      <section className="store-information">
-        <h5 className="store-info">The prints are live!</h5>
+    <section className="container row mx-auto">
+      <section className="col-sm store-information">
+        <h5 className="store-info ">The prints are live!</h5>
         <p className="store-desc">check out all hamdallagil's artwork here!</p>
-        <Link to="/store" className="btn-custom-about">
-          Store
-        </Link>
+        <div className="mt-3 mx-auto">
+          <Link to="/store" className="btn-custom-about">
+            Store
+          </Link>
+        </div>
       </section>
-      <section className="store-image-ad">
-        <img src={others.ad} alt="ad-store" className="store-image" loading="lazy"/>
+      <section className="col-sm justify-content-center mx-3">
+        <img src={others.ad} alt="ad-store" className="store-image img-fluid" loading="lazy"/>
       </section>
     </section>
   )

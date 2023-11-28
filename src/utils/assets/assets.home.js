@@ -9,6 +9,7 @@ import webLogo from '../../assets/icons/logo.svg'
 import greet from '../../assets/images/greet1.jpg'
 import storeAd from '../../assets/images/store.jpg'
 import smallhero1 from '../../assets/images/small/hero1-small.jpg'
+import imbroke from '../../assets/images/help.jpg'
 
 const _artCategories = ['Illustration', 'Fan Art', 'Game Art']
 
@@ -70,4 +71,5 @@ export const others = {
   ad: storeAd,
   webLogo,
   greet, 
+  imbroke
 }

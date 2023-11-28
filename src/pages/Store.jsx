@@ -22,7 +22,7 @@ export default function StorePage() {
         <div className="row justify-content-center">
           <div className="col-md-6 text-center mb-4">
             <div className="image-store">
-              <h2>Print</h2> 
+              <h2 className="product-title">Print</h2> 
               <img src={store1} alt="" className="w-100"/>
               <h4 className="store-category mt-3">Inprint</h4>
               <p>Check out all of my artwork's prints</p>
@@ -30,7 +30,7 @@ export default function StorePage() {
           </div>
           <div className="col-md-6 text-center mb-4">
             <div className="image-store">
-              <h2>Stickers</h2>
+              <h2 className="product-title">Stickers</h2>
               <img src={store1} alt="" className="w-100"/>
               <h4 className="store-category mt-3">Tokopedia</h4>
               <p>Check out all of my artwork's stickers</p>

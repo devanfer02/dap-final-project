@@ -3,6 +3,11 @@
     margin-right: 10px;
 }
 
+.navbar-toggler {
+    border: none;
+    color: #A0D6D7;
+}
+
 .nav-href:hover {
     color: #3F74AB;
 }

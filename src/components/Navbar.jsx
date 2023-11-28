@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { Icon } from '@iconify/react'
 import Logo from '../assets/icons/logo.svg'
 
 export default function Navbar() {
@@ -8,8 +9,9 @@ export default function Navbar() {
         <div className="d-flex">
           <img src={Logo}alt="logo" className="img-fluid icon-nav" draggable='false'/>
         </div>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+        <button className="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <Icon icon='fontisto:nav-icon-a' style={{ color: '#2B3253' }}/>
+          {/* <span className="navbar-toggler-icon navbar-toggler-icon-custom"></span> */}
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-2 mb-lg-0 ms-auto" style={{ paddingTop: '10px' }}>

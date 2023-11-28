@@ -10,10 +10,10 @@ export default function AboutMe() {
         </p>
         <ul class="nav text-center justify-content-center">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/devanfer02">Linkedin</a>
+            <a class="nav-link" href="https://www.linkedin.com/in/devanferrel/">Linkedin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/devanferrel/">Github</a>
+            <a class="nav-link" href="https://github.com/devanfer02">Github</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.instagram.com/dvnf20/">Instagram</a>

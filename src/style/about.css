@@ -1,17 +1,16 @@
 .about-section {
-    background-color: #2B3253;
     margin: 20vh 0 10vh 0;
 }
 
 .title-about {
     font-family: 'DK Lemon Yellow Sun', sans-serif;
     text-transform: uppercase;
-    color: #A0D6D7;
+    color: #000000;
 }
 
 .desc-about {
     font-family: 'Poppins', sans-serif;
-    color: #FFFFFF;
+    color: #2B3253;
 }
 
 .faq-icon {
@@ -62,4 +61,10 @@ li {
 .btn-custom:hover {
     color: #2B3253;
     background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .about-section {
+        margin: 5vh 0 3vh 0
+    }
 }
