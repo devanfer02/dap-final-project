@@ -152,7 +152,7 @@ export default function PortfolioPage() {
   }
 
   return (
-    <>
+    <section className="leaf-background">
       <section className="portfolio-title-container text-center mb-5">
         <section className="justify-content-center">
           <div className="col-md-12">
@@ -179,6 +179,6 @@ export default function PortfolioPage() {
       <section className="container mb-5">
         { renderImages() }
       </section>
-    </>
+    </section>
   )
 }

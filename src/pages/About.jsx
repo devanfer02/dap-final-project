@@ -121,13 +121,13 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <>
+    <section className="leaf-background">
       <AboutSection/>
       <SectionTitle title="FAQ"/>
       <FAQSection/>
       <SectionTitle title="Contact Me"/>
       <ContactSection/>
-    </>
+    </section>
   )
 }
 

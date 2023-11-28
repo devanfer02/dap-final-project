@@ -1,7 +1,7 @@
 .slider-img {
     width: 100%;
-    z-index: -1;
-    filter: opacity(60%);
+    z-index: 2;
+    filter: opacity(70%);
     user-select: none;
 }
 

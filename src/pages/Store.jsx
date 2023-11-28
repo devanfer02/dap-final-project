@@ -18,6 +18,7 @@ export default function StorePage() {
           <div className="overlay"></div>
         </div>
       </section>
+      <section className="leaf-background">
       <section className="container">
         <div className="row justify-content-center">
           <div className="col-md-6 text-center mb-4">
@@ -37,6 +38,7 @@ export default function StorePage() {
             </div>
           </div>
         </div>
+      </section>
       </section>
     </>
   )

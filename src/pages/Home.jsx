@@ -285,6 +285,7 @@ export default function HomePage() {
   return (
     <>
       <HomeCarousel/>
+      <section className="leaf-background">
       <SectionTitle title={'Introduction'}/>
       <HomeAbout/>
       <SectionTitle title={'Portfolio'}/>
@@ -292,6 +293,7 @@ export default function HomePage() {
       <PlsHelpImBroke/>
       <SectionTitle title={'Store'}/>
       <HomeStore/>
+      </section>
     </>
   )
 }
