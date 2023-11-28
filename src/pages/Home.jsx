@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Icon } from '@iconify/react'
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
