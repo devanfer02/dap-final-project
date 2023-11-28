@@ -12,6 +12,14 @@ html, body {
     background-position: center;
 }
 
+.iconify-color {
+    color: #2B3253;
+}
+
+.iconify-color:hover {
+    color: #3F74AB;
+}
+
 .font-dk-96 {
     font-size: 100px;
     text-transform: uppercase;

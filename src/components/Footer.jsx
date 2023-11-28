@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Icon } from '@iconify/react'
 import { socials, other } from '../utils/assets/assets.socials'
 
 import '../style/footer.css'
@@ -61,7 +62,8 @@ export default function Footer() {
               {socials.map((social) => (
                 <li className="nav-item footer-item">
                   <Link to={social.href} target="_blank">
-                    <img className="" src={social.logo} alt="" />
+                    <Icon icon={social.icon} width={'30px'} className='iconify-color'/>
+                    
                   </Link>
                 </li>
               ))}

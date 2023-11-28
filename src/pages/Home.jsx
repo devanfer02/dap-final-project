@@ -69,7 +69,7 @@ function CarouselText() {
           { socials.map((social) => (
             <li className='nav-item footer-item'>
               <Link to={social.href} target="_blank">
-                <img className="" src={social.logo} alt="" />
+                <Icon icon={social.icon} width={'30px'} className='iconify-color'/>
               </Link>
             </li>
           ))}
