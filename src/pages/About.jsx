@@ -12,22 +12,20 @@ function Line() {
 
 function AboutSection() {
   return (
-    <section className="about-section justify-content-center">
-      <section className="row justify-content-center p-5">
-        <div className="col-md-6 justify-content-center">
-          <section className="about-content container p-5">
-            <h1 className="title-about">About</h1>
-            <p className="desc-about">
-            Hamdalla Agil is a comic artist and illustrator based in Malang, Indonesia. He is very passionate about drawing characters and creating digital comics. With a very unique style, he skillfully utilizes software like Adobe Photoshop, Clip Studio Paint, and Procreate to bring his artistic visions to life.
-            </p>
-          </section>
-        </div>
-        <div className="col-md-6 justify-content-center">
-          <section className="picture-content">
-            <img src={profiles[0].src} alt="photo-profile" className="photo-profile rounded-3 img-fluid"/>
-          </section>
-        </div>
-      </section>
+    <section className="container row mx-auto about-section">
+      <div className="col-md-6 justify-content-center">
+        <section className="about-content container p-5">
+          <h1 className="title-about">About</h1>
+          <p className="desc-about">
+          Hamdalla Agil is a comic artist and illustrator based in Malang, Indonesia. He is very passionate about drawing characters and creating digital comics. With a very unique style, he skillfully utilizes software like Adobe Photoshop, Clip Studio Paint, and Procreate to bring his artistic visions to life.
+          </p>
+        </section>
+      </div>
+      <div className="col-md-6">
+        <section className="picture-content">
+          <img src={profiles[0].src} alt="photo-profile" className="photo-profile rounded-3 img-fluid"/>
+        </section>
+      </div>
     </section>
   )
 }
@@ -93,7 +91,7 @@ function FAQSection() {
 
 function ContactSection() {
   return (
-    <section className="container mt-1 mb-5">
+    <section className="container mt-1 mb-5" id="contact">
       <section className="text-center">
         <p>please contact me for work and collaboration : 
           <p className="text-black">hamdalla.agil@gmail.com</p>

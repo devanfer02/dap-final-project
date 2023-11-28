@@ -44,7 +44,7 @@ export default function Footer() {
                 { section.links.map((link) => (
                   <li className="nav-item mb-2">
                     <Link 
-                      to="" 
+                      to={'/'} 
                       className="nav-link p-0 font-dk-12"
                       style={{ color: '#0c0c0c' }}
                     >
